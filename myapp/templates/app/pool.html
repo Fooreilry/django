@@ -1,0 +1,45 @@
+{% extends 'app/layout.html' %}
+{% load static %}
+{% block content %}
+    {% if form %}
+        <form class="border border-primary rounded w-75 mx-auto mt-4 p-4" method="post">
+            {% csrf_token %}
+            <div class=" d-flex flex-column row-gap-3 ">
+                <div class="d-flex gap-4">
+                <div class="form-group w-100">
+                    <label class="form-label" for="name">Имя: </label>
+                    <input id="name" class="form-control" type="text" name="name" maxlength="30" required>
+            </div>
+            <div class="form-group w-100">
+                <label class="form-label" for="email">Email: </label>
+                <input id="email" type="email" class="form-control" name="email" maxlength="30" required>
+            </div>
+            </div>
+            <div class="form-group">
+                <label>{{ form.rate_site.label }}</label>
+                {{ form.rate_site }}
+
+            </div>
+            <div class="form-group">
+                <label>{{ form.sites.label }}</label>
+                {{ form.sites }}
+
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="feedback">Отзыв: </label>
+                <textarea class="form-control" id="feedback" name="feedback" maxlength="100" required></textarea>
+            </div>
+            <input class="btn btn-primary mb-3" type="submit" value="Отправить">
+            </div>
+        </form>
+    {% else %}
+        <div class="text-center fs-2 mt-5">
+        <p>Спасибо за ваш отзыв! {{ data.name }}</p>
+        <p>
+            Ваш отзыв: {{ data.feedback }}
+        </p>
+        </div>
+
+    {% endif %}
+
+{% endblock %}

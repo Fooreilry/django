@@ -1,0 +1,129 @@
+{% extends 'app/layout.html' %}
+{% load static %}
+{% block content %}
+{#    <style>#}
+{#        .carousel-control-prev-icon,#}
+{#        .carousel-control-next-icon {#}
+{#            filter: invert(100%);#}
+{#        }#}
+{#    </style>#}
+{#    <p class="d-flex justify-content-center mt-5 ">Мир электроники</p>#}
+    <h1 class="d-flex justify-content-center mt-5">CARshop</h1>
+    <div class="d-flex justify-content-center mb-4">
+        <div class=" border-bottom border-primary border-4" style="width: 200px;"></div>
+    </div>
+        <h3 class="d-flex justify-content-center my-3 ">Популярне товары</h3>
+
+    <div class="d-flex gap-4 px-5">
+        <div class="card bg-primary mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center border border-3 rounded border-white">
+                        <img class="rounded" src="{% static 'app/ac-schnitzer-bmw-x6-f16-bmv.jpg' %}"
+                             width="300" height="200" alt="product">
+                    </div>
+                    <div class="text-center mt-2">
+                        <h5 class="card-title text-white">Машина BMW белая</h5>
+                        <div class="d-flex justify-content-between align-items-center px-2">
+                            <p class="card-text text-white m-0">Цена: 1000$</p>
+                        <button type="button" class="btn btn-light text-primary bg-white border border-info-emphasis p-1">В корзину</button>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+    <div class="card bg-primary mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center border border-3 rounded border-white">
+                        <img class="rounded" src="{% static 'app/ac-schnitzer-bmw-x6-f16-bmv.jpg' %}"
+                             width="300" height="200" alt="product">
+                    </div>
+                    <div class="text-center mt-2">
+                        <h5 class="card-title text-white">Машина BMW белая</h5>
+                        <div class="d-flex justify-content-between align-items-center px-2">
+                            <p class="card-text text-white m-0">Цена: 1000$</p>
+                        <button type="button" class="btn btn-light text-primary bg-white border border-info-emphasis p-1">В корзину</button>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+    <div class="card bg-primary mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center border border-3 rounded border-white">
+                        <img class="rounded" src="{% static 'app/ac-schnitzer-bmw-x6-f16-bmv.jpg' %}"
+                             width="300" height="200" alt="product">
+                    </div>
+                    <div class="text-center mt-2">
+                        <h5 class="card-title text-white">Машина BMW белая</h5>
+                        <div class="d-flex justify-content-between align-items-center px-2">
+                            <p class="card-text text-white m-0">Цена: 1000$</p>
+                        <button type="button" class="btn btn-light text-primary bg-white border border-info-emphasis p-1">В корзину</button>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="d-flex mt-3 px-5 w-100">
+        <a class=" ms-auto" href={% url 'catalog' %}>
+         <button type="button" class="btn btn-light text-white bg-primary border border-info-emphasis py-1 px-5 ">Перейти в каталог</button>
+        </a>
+    </div>
+
+{#    <div id="carouselExample" class="carousel slide mt-5">#}
+{#        <div class="carousel-inner">#}
+{#            <div class="carousel-item active">#}
+{#                <img src="{% static 'app/lI32oIQ3rn0.jpg' %}" class="d-block w-25 mx-auto"#}
+{#                     alt="img">#}
+{#            </div>#}
+{#            <div class="carousel-item">#}
+{#                <img src="{% static 'app/lI32oIQ3rn0.jpg' %}" class="d-block w-25 mx-auto"#}
+{#                     alt="img">#}
+{#            </div>#}
+{#            <div class="carousel-item">#}
+{#                <img src="{% static 'app/lI32oIQ3rn0.jpg' %}" class="d-block w-25 mx-auto"#}
+{#                     alt="img">#}
+{#            </div>#}
+{#        </div>#}
+{#        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">#}
+{#            <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
+{#            <span class="visually-hidden">Previous</span>#}
+{#        </button>#}
+{#        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">#}
+{#            <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
+{#            <span class="visually-hidden invert-color">Next</span>#}
+{#        </button>#}
+{#        <div class="d-flex justify-content-center">#}
+{#            <a class="border border-3 rounded-2 btn btn-warning text-white w-40" href="/catalog">Узнать больше</a>#}
+{#        </div>#}
+    </div>
+
+{#    <div class="d-flex justify-content-center mt-5">#}
+{#        <div class="container mt-5 w-75">#}
+{#            <div class="col-md-12">#}
+{#                <div class="card mb-3">#}
+{#                    <div class="card-body text-center">#}
+{#                        <h5 class="card-title">Новость 1</h5>#}
+{#                        <p class="card-text">Текст новости 1</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md-12">#}
+{#                <div class="card mb-3">#}
+{#                    <div class="card-body text-center">#}
+{#                        <h5 class="card-title">Новость 2</h5>#}
+{#                        <p class="card-text">Текст новости 2</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md-12">#}
+{#                <div class="card mb-3">#}
+{#                    <div class="card-body text-center">#}
+{#                        <h5 class="card-title">Новость 3</h5>#}
+{#                        <p class="card-text">Текст новости 3</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}

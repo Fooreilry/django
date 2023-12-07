@@ -1,0 +1,14 @@
+body{
+    font-size: 16px;
+    color: #ffffff;
+    background: #abc6ff;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.cursor-pointer:hover {
+    cursor: pointer;
+    color: #3366db;
+}

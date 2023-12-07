@@ -1,0 +1,16 @@
+{% extends 'app/layout.html' %}
+{% load static %}
+{% block content %}
+    <div class=" mt-4">
+        <h2 class=" text-center text-back">Регистрация</h2>
+        <div class="col-md-6 mx-auto mt-4">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group d-flex flex-column justify-content-center align-items-center">
+                    <div class="card border border-2 border-primary p-3 ">{{ regform.as_p }}</div>
+                    <button type="submit" class="btn btn-primary mt-3 mx-auto">Зарегистрироваться</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
