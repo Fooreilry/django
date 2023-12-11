@@ -1,7 +1,7 @@
 body{
     font-size: 16px;
     color: #ffffff;
-    background: #abc6ff;
+    background-color: #91b2f8;
 }
 
 *{
@@ -11,4 +11,14 @@ body{
 .cursor-pointer:hover {
     cursor: pointer;
     color: #3366db;
+}
+li.nav-item:hover{
+    background-color: rgba(255, 255, 255, 1);
+}
+a.nav-link:hover{
+    color: rgba(51, 102, 219, 1);
+}
+
+a.nav-link{
+    color: white;
 }

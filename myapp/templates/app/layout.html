@@ -25,39 +25,61 @@
         <div class="d-flex justify-content-center">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="li-item nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href={% url 'catalog' %}>Каталог</a>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href={% url 'catalog' %}>Каталог</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href={% url 'contact' %}>Контакты</a>
+                        <a class="nav-link " aria-current="page" href={% url 'contact' %}>Контакты</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link active text-white" aria-current="page" href={% url 'news' %}>Новости</a>
+                        <a class="nav-link " aria-current="page" href={% url 'news' %}>Новости</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link active text-white" aria-current="page" href={% url 'cart' %}>
+                        <a class="nav-link" aria-current="page" href={% url 'cart' %}>
                             <img src="{% static 'app/cart.svg' %}" alt="cart" width="20" height="20">
                         </a>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
-                            <a class="nav-link active text-white" href={% url 'store' %}>{{ user.username }}</a>
+                            <a class="nav-link " href={% url 'store' %}>{{ user.username }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'logout' %}">Выйти</a>
+                            <a class="nav-link " href="{% url 'logout' %}">Выйти</a>
                         </li>
                     {% else %}
                         <li class="nav-item dropdown">
-                            <a class="nav-link active text-white" href="{% url 'login' %}">Вход</a>
+                            <a class="nav-link " href="{% url 'login' %}">Вход</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link active text-white" href="{% url 'registration' %}">Регистрация</a>
+                            <a class="nav-link " href="{% url 'registration' %}">Регистрация</a>
                         </li>
                     {% endif %}
                     <li class="nav-item">
 
-                        <a class="nav-link text-white" href={% url 'pool' %}>
+                        <a class="nav-link " href={% url 'pool' %}>
                             Обратная связь
+                        </a>
+                    </li>
+                <li class="nav-item dropdown ">
+                        <a class="nav-link" aria-current="page" href={% url 'resurs' %}>
+                            Полезные ресурсы
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link" aria-current="page" href={% url 'blog' %}>
+                            Блог
+                        </a>
+                    </li>
+                    {% if user.is_superuser %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " aria-current="page" href={% url 'newpost' %}>
+                                Добавить статью
+                            </a>
+                        </li>
+                    {% endif %}
+                <li class="nav-item dropdown">
+                        <a class="nav-link " aria-current="page" href={% url 'videopost' %}>
+                            Видео
                         </a>
                     </li>
                 </ul>

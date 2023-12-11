@@ -18,6 +18,9 @@ from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 from datetime import datetime
 from . import views, forms
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
 
 urlpatterns = [
     path('', views.store, name="store"),
@@ -28,6 +31,10 @@ urlpatterns = [
     path('catalog', views.catalog, name="catalog"),
     path('resurs', views.resurs, name="resurs"),
     path('registration', views.registration, name="registration"),
+    path('blog', views.blog, name="blog"),
+    path('newpost/', views.newpost, name="newpost"),
+    path('blogpost/<int:parametr>/', views.blogpost, name="blogpost"),
+    path('videopost/', views.videopost, name="videopost"),
     path('login/',
          LoginView.as_view(
              template_name='app/login.html',
@@ -36,8 +43,11 @@ urlpatterns = [
                  'title': 'Авторизация',
                  'year': datetime.now().year,
              },
-             success_url='store/',
+             next_page='/',
          ),
          name='login'),
-    path('logout/', LogoutView.as_view(next_page='/'), name="logout"),
+    path('logout/', LogoutView.as_view(next_page="/"), name="logout"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += staticfiles_urlpatterns()

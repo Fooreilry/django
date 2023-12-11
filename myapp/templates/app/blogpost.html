@@ -1,0 +1,41 @@
+{% extends 'app/layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="px-4">
+        <div class="d-flex flex-column align-items-center">
+            <h2 class="text-center mt-5 mb-2 text-black">{{ post_1.title }}</h2>
+            {% if post_1.image and post_1.image.url != "/media/temp.jpg" %}
+                <img src="{{ post_1.image.url }}" alt="img" width="400">
+            {% endif %}
+        </div>
+        <p class="text-black">{{ post_1.content|linebreaksbr }}</p>
+        {% if user.is_authenticated %}
+            <h3 class="text-center text-black mt-5">Добавить комментарий</h3>
+            <form class=" border border-2 border-primary rounded p-5" method="post">
+                {% csrf_token %}
+                <div class="d-flex align-items-center flex-column">
+                    <div class="text-black ">{{ form.as_p }}</div>
+                    <button type="submit" class="btn btn-primary text-white">Отправить комментарий</button>
+
+                </div>
+            </form>
+            <p class="w-100 d-flex justify-content-center m-3">
+            <a class="text-center" href="{% url 'blog' %}">Назад</a>
+        </p>
+        {% else %}
+            <h3 class="text-black text-center">Для добавления своего комментария, пожалуйста, авторизуйтесь</h3>
+            <p class="w-100 d-flex justify-content-center m-4 text-black">
+                <a href="{% url 'login' %}">Войдите</a>
+                или <a href="{% url 'registration' %}">зарегистрируйтесь</a>
+                чтобы оставить комментарий.
+            </p>
+        {% endif %}
+        <br/>
+        {% for comment in comments %}
+            <hr/>
+            <h5 class="text-black">{{ comment.author }}</h5>
+            <p class="text-black">{{ comment.text|linebreaksbr }}</p>
+            <p class="text-black">{{ comment.date }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

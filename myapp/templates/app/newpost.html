@@ -1,0 +1,12 @@
+{% extends 'app/layout.html' %}
+{% load static %}
+{% block content %}
+    <h3 class=" text-black text-center my-4">Добавить статью</h3>
+    <form class="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="d-flex align-items-center flex-column text-black">
+        {{ blogform.as_p }}
+        <button type="submit" class="btn btn-primary text-white">Сохранить статью</button>
+    </div>
+    </form>
+{% endblock content %}

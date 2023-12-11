@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     {% if form %}
-        <form class="border border-primary rounded w-75 mx-auto mt-4 p-4" method="post">
+        <form class="border border-2 border-primary rounded w-75 mx-auto mt-4 p-4 text-black bg-white" method="post">
             {% csrf_token %}
             <div class=" d-flex flex-column row-gap-3 ">
                 <div class="d-flex gap-4">
@@ -29,11 +29,11 @@
                 <label class="form-label" for="feedback">Отзыв: </label>
                 <textarea class="form-control" id="feedback" name="feedback" maxlength="100" required></textarea>
             </div>
-            <input class="btn btn-primary mb-3" type="submit" value="Отправить">
+            <input class="btn btn-primary mb-3 text-white" type="submit" value="Отправить">
             </div>
         </form>
     {% else %}
-        <div class="text-center fs-2 mt-5">
+        <div class="text-center fs-2 mt-5 text-black">
         <p>Спасибо за ваш отзыв! {{ data.name }}</p>
         <p>
             Ваш отзыв: {{ data.feedback }}

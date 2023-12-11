@@ -1,0 +1,19 @@
+{% extends 'app/layout.html' %}
+{% load static %}
+{% block content %}
+    <h1>{{ title }}</h1>
+    <hr/>
+    <div>
+        <h2>
+            Видеоролик 1
+        </h2>
+        <video src="/media/trim_A50853CC_0A92_49AD_B7D4_587D23988B44.mp4" controls="controls" width="400" height="300" poster="/media/mercedes-amg-gt.jpg"></video>
+    </div>
+    <hr/>
+    <div>
+        <h2>
+            Видеоролик 2
+        </h2>
+        <video src="/media/VOITURE_30f.mp4" controls="controls" width="400" height="300" poster="/media/mercedes-amg-gt.jpg"></video>
+    </div>
+{% endblock content %}
